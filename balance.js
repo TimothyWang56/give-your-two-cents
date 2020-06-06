@@ -19,9 +19,9 @@ function isValidFloat(str) {
 addToFundsButton.onclick = function() {
     const amountToAddStr = moneyInput.value;
     if (isValidFloat(amountToAddStr)) {
-        const amountToAdd = parseFloat(amountToAddStr);
+        const amountToAdd = Math.round(parseFloat(amountToAddStr) * 100)/100;
         chrome.storage.sync.get('balance', function(data) {
-            let newBalance = data.balance + amountToAdd;
+            let newBalance = Math.round((data.balance + amountToAdd)*100)/100;
             chrome.storage.sync.set({balance: newBalance}, function() {
                 updateBalanceDisplay();
                 moneyInput.value = "";
