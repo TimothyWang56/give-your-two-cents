@@ -17,4 +17,4 @@ changeColor.onclick = function(element) {
           tabs[0].id,
           {code: 'document.body.style.backgroundColor = "' + color + '";'});
     });
-  };
+};
