@@ -19,6 +19,4 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.executeScript(null, {file: "testScript.js"});
-});
+chrome.tabs.executeScript(null, {file: 'popup.js'}, () => chrome.runtime.lastError);

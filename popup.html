@@ -2,11 +2,19 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="popup.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
   </head>
   <body>
     <div id="body">
-      <button id="changeColor"></button>
-      <div>Price of Purchase: </div> <span id="purchase">None</span>
+      <nav class="nav">
+        <a href="#" class="nav-item is-active" active-color="orange">Purchase</a>
+        <a href="#" class="nav-item" active-color="blue">Donate</a>
+        <a href="#" class="nav-item" active-color="red">Profile</a>
+        <span class="nav-indicator"></span>
+      </nav>
+      <div class="">
+        Price of Purchase: <span id="purchase">None</span>
+      </div>
       <div id='balance'></div>
       <div id="balance">Balance goes here!</div>
       <input id="moneyInput"/>
@@ -14,5 +22,6 @@
     </div>
     <script src="popup.js"></script>
     <script src="balance.js"></script>
+    <script src="navbar.js"></script>
   </body>
 </html>
