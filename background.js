@@ -19,4 +19,6 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
-chrome.tabs.executeScript(null, {file: 'donate.js'}, () => chrome.runtime.lastError);
+if(document.getElementsByClassName("grand-total-price")[0] != undefined){
+  chrome.tabs.create({url:"donate.html"});
+}

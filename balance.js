@@ -1,7 +1,7 @@
 'use strict';
 
 let balance = document.getElementById('balance');
-let moneyInput = document.getElementById('moneyInput');
+let pledgeAmount = document.getElementById('pledgeAmount');
 let addToFundsButton = document.getElementById('addToFundsButton');
 
 function updateBalanceDisplay() {
@@ -17,18 +17,18 @@ function isValidFloat(str) {
 }
 
 addToFundsButton.onclick = function() {
-    const amountToAddStr = moneyInput.value;
+    const amountToAddStr = pledgeAmount.value;
     if (isValidFloat(amountToAddStr)) {
         const amountToAdd = parseFloat(amountToAddStr);
         chrome.storage.sync.get('balance', function(data) {
             let newBalance = data.balance + amountToAdd;
             chrome.storage.sync.set({balance: newBalance}, function() {
                 updateBalanceDisplay();
-                moneyInput.value = "";
+                pledgeAmount.value = "";
             });
         });
     } else {
         chrome.extension.getBackgroundPage().console.log('not correct format for a number')
-        moneyInput.value = "";
+        pledgeAmount.value = "";
     }
 }
