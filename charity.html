@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="donate.css">
+    <link rel="stylesheet" type="text/css" href="charity.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
   </head>
   <body>
+    <template id="card">
+      <div>
+        <div id="charityName">
+          card name
+        </div>
+        <div id="charityLink">
+          card link
+        </div>
+        <div id="charityDesc">
+          decription
+        </div>
+      </div>
+    </template>
     <div id="body charity">
       <nav class="nav">
         <a href="./donate.html" class="nav-item" active-color="orange">Donate</a>
@@ -13,7 +26,11 @@
         <span class="nav-indicator"></span>
       </nav>
       <h1> CHARITIES </h1>
+      <div id="charities">
+
+      </div>
     </div>
     <script src="navbar.js"></script>
+    <script src="charities.js"></script>
   </body>
 </html>
