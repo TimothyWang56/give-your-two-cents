@@ -1,6 +1,7 @@
 #body {
   width: 500px;
   height: 500px;
+  overflow: hidden !important;
 }
 button {
   height: 30px;

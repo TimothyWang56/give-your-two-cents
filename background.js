@@ -19,4 +19,4 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
-chrome.tabs.executeScript(null, {file: 'popup.js'}, () => chrome.runtime.lastError);
+chrome.tabs.executeScript(null, {file: 'donate.js'}, () => chrome.runtime.lastError);
