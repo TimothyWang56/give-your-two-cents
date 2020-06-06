@@ -1,0 +1,9 @@
+#body {
+  width: 500px;
+  height: 500px;
+}
+button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+}
