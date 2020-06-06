@@ -1,0 +1,28 @@
+.card {
+  flex: 0 0 auto;
+  max-width: 15em;
+  border: 4px solid lightgray;
+  border-radius: 1em;
+  margin: 0.1em;
+  max-height: 13em;
+  overflow-y: auto;
+}
+
+.card:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.card-name {
+  font-weight: bold;
+}
+
+.card-desc {
+  font-weight: lighter;
+}
+
+.scrollmenu {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}

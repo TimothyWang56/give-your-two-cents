@@ -35,8 +35,8 @@ function fetchCharities() {
     charityData.forEach(data => {
         let node = document.importNode(charityCardTemplate.content, true);
         node.getElementById("charityName").innerHTML = data.name;
-        node.getElementById("charityLink").innerHTML = data.link;
         node.getElementById("charityDesc").innerHTML = data.description;
+        node.getElementById("charityCard").onclick = function(){window.open(data.link, '_blank').focus()};
         charities.appendChild(node);
     })
 }
