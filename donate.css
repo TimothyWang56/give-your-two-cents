@@ -1,6 +1,4 @@
-#body {
-  width: 500px;
-  height: 500px;
+body {
   overflow: hidden !important;
 }
 button {

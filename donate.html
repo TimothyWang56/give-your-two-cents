@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="donate.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="button.css">
   </head>
   <body>
     <div id="body donate">
@@ -16,10 +17,13 @@
       <div class="">
         Price of Purchase: <span id="purchase">None</span>
       </div>
-      <div id='balance'></div>
-      <div id="balance">Balance goes here!</div>
-      <input id="moneyInput"/>
-      <button id="addToFundsButton"></button>
+      <div id='balance-wrapper'>
+        Your current donation balance is: 
+        <span id='balance'></span>
+      </div>
+      
+      <input type="number" id="moneyInput"/>
+      <a href="#" class="myButton" id="addToFundsButton">Pledge!</a>
     </div>
     <script src="donate.js"></script>
     <script src="balance.js"></script>
