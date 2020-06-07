@@ -31,8 +31,6 @@ addToFundsButton.onclick = function() {
         pledgeAmount.value = "";
     } else {
         pledgeAmount.value = "";
-        chrome.extension.getBackgroundPage().console.log('not correct format for a number')
-        pledgeAmount.value = "";
     }
 }
 
