@@ -6,6 +6,7 @@
   margin: 0.1em;
   max-height: 13em;
   overflow-y: auto;
+  margin-right: 2.0em;
 }
 
 .card:hover {
