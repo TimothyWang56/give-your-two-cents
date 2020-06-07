@@ -16,10 +16,12 @@
 
 .card-name {
   font-weight: bold;
+  padding: 2px;
 }
 
 .card-desc {
   font-weight: lighter;
+  padding: 5px;
 }
 
 .scrollmenu {
