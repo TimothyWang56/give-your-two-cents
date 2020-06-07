@@ -1,28 +1,52 @@
 'use strict';
 
 let balance = document.getElementById('balance');
-let moneyInput = document.getElementById('moneyInput');
+let pledgeAmount = document.getElementById('pledgeAmount');
 let addToFundsButton = document.getElementById('addToFundsButton');
 
+<<<<<<< HEAD
+=======
+function updateBalanceDisplay() {
+    chrome.storage.sync.get('balance', function(data) {
+        balance.innerHTML = '$' + data.balance;
+    });
+}
+
+updateBalanceDisplay();
+
+>>>>>>> a14c618439431a05075e6472534f8e994eae5a2e
 function isValidFloat(str) {
     return (/^-?[\d]*(\.[\d]+)?$/g).test(str);
 }
 
 addToFundsButton.onclick = function() {
-    const amountToAddStr = moneyInput.value;
+    const amountToAddStr = pledgeAmount.value;
     if (isValidFloat(amountToAddStr)) {
         const amountToAdd = Math.round(parseFloat(amountToAddStr) * 100)/100;
+<<<<<<< HEAD
         if (amountToAdd > 0) {
             chrome.storage.sync.get('balance', function(data) {
                 let newBalance = Math.round((data.balance + amountToAdd) * 100)/100;
                 chrome.storage.sync.set({balance: newBalance}, function() {
                     updateProgressBar();
                 });
+=======
+        chrome.storage.sync.get('balance', function(data) {
+            let newBalance = Math.round((data.balance + amountToAdd)*100)/100;
+            chrome.storage.sync.set({balance: newBalance}, function() {
+                updateBalanceDisplay();
+                pledgeAmount.value = "";
+>>>>>>> a14c618439431a05075e6472534f8e994eae5a2e
             });
         }
         moneyInput.value = "";
     } else {
+<<<<<<< HEAD
         moneyInput.value = "";
+=======
+        chrome.extension.getBackgroundPage().console.log('not correct format for a number')
+        pledgeAmount.value = "";
+>>>>>>> a14c618439431a05075e6472534f8e994eae5a2e
     }
 }
 

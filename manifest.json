@@ -4,9 +4,16 @@
     "description": "Build an Extension!",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["background.js", "alert.js"],
       "persistent": false
     },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "run_at": "document_end",
+        "js": ["alert.js"]
+      }
+    ],
     "browser_action": {
       "default_popup": "donate.html"
     },
