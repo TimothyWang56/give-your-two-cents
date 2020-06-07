@@ -16,6 +16,7 @@ donateButton.onclick = function() {
               donationHistory.push({
                 amount: amountDonatedRounded,
                 charityName: charityName.value,
+                time: (new Date().toLocaleDateString())
               });
               chrome.storage.sync.set({donationHistory: donationHistory}, function() {})
               amountDonated.value = "";

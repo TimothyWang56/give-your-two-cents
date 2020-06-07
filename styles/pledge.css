@@ -17,3 +17,17 @@
 .pledgeContainer {
   padding: 1em;
 }
+
+#pledgeAmount {
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  width: 25%;
+  border-color: rgb(222, 246, 255);
+}
+
+#pledgeAmount:focus {
+  border: none;
+  background-color: rgb(236, 250, 255);
+}
+

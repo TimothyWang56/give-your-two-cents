@@ -2,3 +2,19 @@
   padding: 1em;
   line-height: 2em;
 }
+
+.donateInput {
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-color: rgb(222, 246, 255);
+}
+
+.donateInput:focus {
+  border: none;
+  background-color: rgb(236, 250, 255);
+}
+
+.donateAmount {
+  width: 20%;
+}
