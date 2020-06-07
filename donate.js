@@ -1,21 +1,28 @@
 let amountDonated = document.getElementById('amountDonated');
-let pledgeAmount = document.getElementById('pledgeAmount');
-let addToFundsButton = document.getElementById('addToFundsButton');
+let charityName = document.getElementById('charityName');
+let donateButton = document.getElementById('donateButton');
 
-addToFundsButton.onclick = function() {
-    const amountToAddStr = pledgeAmount.value;
-    if (isValidFloat(amountToAddStr)) {
-        const amountToAdd = Math.round(parseFloat(amountToAddStr) * 100)/100;
-        if (amountToAdd > 0) {
-            chrome.storage.sync.get('balance', function(data) {
-                let newBalance = Math.round((data.balance + amountToAdd) * 100)/100;
-                chrome.storage.sync.set({balance: newBalance}, function() {
-                    updateProgressBar();
+donateButton.onclick = function() {
+  if (amountDonated.value !== "" && charityName.value !== "") {
+    const amountDonatedRounded = Math.round(parseFloat(amountDonated.value) * 100)/100;
+    chrome.storage.sync.get('balance', function(data) {
+        let newBalance = (data.balance < amountDonatedRounded) ? 0: Math.round((data.balance - amountDonatedRounded) * 100)/100;
+        chrome.storage.sync.set({balance: newBalance}, function() {
+          chrome.storage.sync.get('amountDonated', function(donateData) {
+            let newAmountDonated = Math.round((donateData.amountDonated + amountDonatedRounded) * 100)/100;
+            chrome.storage.sync.set({amountDonated: newAmountDonated}, function() {
+              chrome.storage.sync.get('donationHistory', function(historyData) {
+                let donationHistory = historyData.donationHistory;
+                donationHistory.push({
+                  amount: amountDonatedRounded,
+                  charityName: charityName.value,
                 });
             });
-        }
-        pledgeAmount.value = "";
-    } else {
-        pledgeAmount.value = "";
-    }
+            });
+        });
+        });
+    });
+    amountDonated.value = "";
+    charityName.value = "";
+  }
 }
