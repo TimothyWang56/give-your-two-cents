@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({amountDonated: 0}, function() {
     console.log("Amount donated set to 0.");
   });
-  chrome.storage.sync.set({donationHistory: {}}, function() {
+  chrome.storage.sync.set({donationHistory: []}, function() {
     console.log("donationHistory set to empty.");
   });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 function getPriceFromAmazon() {
-  chrome.tabs.executeScript(null, {file: 'getPriceFromAmazon.js'}, function (results) {
+  chrome.tabs.executeScript(null, {file: './scripts/getPriceFromAmazon.js'}, function (results) {
     document.getElementById('purchase').innerHTML = results;
     let price = parsePrice(results);
     if (typeof(price) == "number") {

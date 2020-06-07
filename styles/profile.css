@@ -3,3 +3,10 @@ img {
   height: 50px;
   border-radius: 50%;
 }
+
+.name {
+  margin: 0;
+}
+.historyWrapper {
+  margin: 0;
+}
