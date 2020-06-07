@@ -6,7 +6,7 @@ let addToFundsButton = document.getElementById('addToFundsButton');
 
 function updateBalanceDisplay() {
     chrome.storage.sync.get('balance', function(data) {
-        balance.innerHTML = data.balance;
+        balance.innerHTML = '$' + data.balance;
     });
 }
 
