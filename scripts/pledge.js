@@ -4,7 +4,10 @@ function getPriceFromAmazon() {
   chrome.tabs.executeScript(null, {file: 'getPriceFromAmazon.js'}, function (results) {
     document.getElementById('purchase').innerHTML = results;
     let price = parsePrice(results);
-    document.getElementById('pledgeAmount').value = price;
+    if (typeof(price) == "number") {
+      document.getElementById('pledgeInformation').innerHTML = 'Round up to the nearest dollar by pledging $' + price
+      document.getElementById('pledgeAmount').value = price;
+    }
   })
 }
 
