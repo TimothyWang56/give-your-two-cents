@@ -9,7 +9,7 @@
     <div id="body donate">
       <nav class="nav">
         <a href="./donate.html" class="nav-item is-active" active-color="orange">Donate</a>
-        <a href="./charity.html" class="nav-item" active-color="blue">Charity</a>
+        <a href="./charity.html" class="nav-item" active-color="blue">Charities</a>
         <a href="./profile.html" class="nav-item" active-color="red">Profile</a>
         <span class="nav-indicator"></span>
       </nav>
@@ -17,13 +17,21 @@
       <div class="">
         Price of Purchase: <span id="purchase">None</span>
       </div>
-      <div id='balance-wrapper'>
-        Your current donation balance is: 
-        <span id='balance'></span>
-      </div>
       
-      <input type="number" id="moneyInput"/>
-      <a href="#" class="myButton" id="addToFundsButton">Pledge!</a>
+      <div class="pledgeContainer">
+        <input type="number" min=0.0 step=0.05 id="moneyInput"/>
+        <a href="#" class="myButton" id="addToFundsButton">Pledge!</a>
+        <div class="warning"></div>
+      </div>
+      <div class="barContainer">
+        <div id="myProgress" class="myProgress">
+          <div id="myBar" class="myBar"></div>
+        </div>
+        <div id='balance-wrapper'>
+          Progress: 
+          <span id='balance'></span>
+        </div>
+      </div>
     </div>
     <script src="donate.js"></script>
     <script src="balance.js"></script>
