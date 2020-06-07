@@ -1,7 +1,7 @@
 'use strict';
 
 let balance = document.getElementById('balance');
-let moneyInput = document.getElementById('moneyInput');
+let pledgeAmount = document.getElementById('pledgeAmount');
 let addToFundsButton = document.getElementById('addToFundsButton');
 
 function isValidFloat(str) {
@@ -9,7 +9,7 @@ function isValidFloat(str) {
 }
 
 addToFundsButton.onclick = function() {
-    const amountToAddStr = moneyInput.value;
+    const amountToAddStr = pledgeAmount.value;
     if (isValidFloat(amountToAddStr)) {
         const amountToAdd = Math.round(parseFloat(amountToAddStr) * 100)/100;
         if (amountToAdd > 0) {
@@ -20,9 +20,9 @@ addToFundsButton.onclick = function() {
                 });
             });
         }
-        moneyInput.value = "";
+        pledgeAmount.value = "";
     } else {
-        moneyInput.value = "";
+        pledgeAmount.value = "";
     }
 }
 

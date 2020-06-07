@@ -4,12 +4,7 @@ function getPriceFromAmazon() {
   chrome.tabs.executeScript(null, {file: 'getPriceFromAmazon.js'}, function (results) {
     document.getElementById('purchase').innerHTML = results;
     let price = parsePrice(results);
-    getDonationPrice(price);
-  })
-}
-
-function getDonationPrice(price) {
-  chrome.tabs.executeScript(null, {code: 'console.log("' + price + '");'}, function (results) {
+    document.getElementById('pledgeAmount').value = price;
   })
 }
 
@@ -19,13 +14,13 @@ function parsePrice(priceArr) {
   if (price == 'None') {
     return price;
   }
-  const split_arr = price.split('$');
+  const splitArr = price.split('$');
   let parsedPrice = 0;
-  if (split_arr[0] != '') {
-    parsedPrice = parseFloat(split_arr[0]);
+  if (splitArr[0] != '') {
+    parsedPrice = parseFloat(splitArr[0]);
   }
   else {
-    parsedPrice = parseFloat(split_arr[1]);
+    parsedPrice = parseFloat(splitArr[1]);
   }
   return Math.round((Math.ceil(parsedPrice) - parsedPrice) * 100)/100
 }
