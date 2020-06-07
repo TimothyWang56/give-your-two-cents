@@ -2,28 +2,3 @@ body {
   overflow: hidden !important;
 }
 
-button {
-  height: 30px;
-  width: 30px;
-  outline: none;
-}
-
-.myProgress {
-  width: 100%;
-  background-color: lightgray;
-}
-
-.myBar {
-  width: 10%;
-  height: 5px;
-  background-color: lightskyblue;
-}
-
-.barContainer {
-  margin-top: 5em;;
-}
-
-.pledgeContainer {
-  padding: 1em;
-}
-
