@@ -15,7 +15,7 @@
       }
     ],
     "browser_action": {
-      "default_popup": "donate.html"
+      "default_popup": "pledge.html"
     },
     "icons": {
       "16": "images/charitytrackericon128.png",
