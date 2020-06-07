@@ -7,4 +7,6 @@
 4. Select the folder that this repo was cloned into when prompted.
 5. Enjoy!
 
+[Check out our Devpost for more information!](https://devpost.com/software/charity-tracker-chrome-extension)
+
 #### Created by Timothy Wang, Brown University Class of 2022 and Alexander Shih, University of Toronto Class of 2022
