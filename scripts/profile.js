@@ -10,7 +10,7 @@ function getDonationHistory() {
       data.donationHistory.forEach(element => {
         chrome.extension.getBackgroundPage().console.log('element :>> ', element);
         var listItem = document.createElement("div");
-        var info = document.createTextNode("I donated $" + element.amount + " to " + element.charityName + " at " + element.time);
+        var info = document.createTextNode("I donated $" + element.amount + " to " + element.charityName + " on " + element.time);
         listItem.appendChild(info);
         document.getElementById('donationHistory').appendChild(listItem);
       });

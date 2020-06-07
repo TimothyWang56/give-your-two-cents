@@ -18,10 +18,10 @@
       "default_popup": "templates/pledge.html"
     },
     "icons": {
-      "16": "images/charitytrackericon128.png",
-      "32": "images/charitytrackericon128.png",
-      "48": "images/charitytrackericon128.png",
-      "128": "images/charitytrackericon128.png"
+      "16": "images/giveyourtwocentsicon1.png",
+      "32": "images/giveyourtwocentsicon1.png",
+      "48": "images/giveyourtwocentsicon1.png",
+      "128": "images/giveyourtwocentsicon1.png"
     },
     "options_page": "templates/options.html",
     "manifest_version": 2
